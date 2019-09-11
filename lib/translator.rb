@@ -6,7 +6,7 @@ def load_library (file_path)
  
  e_hash[:get_meaning] = emoticons.reduce({}) do |meanings, (key, value)| { meanings[value(1)] = ""  
    meanings
- }
+ end
  e_hash
 end
 
