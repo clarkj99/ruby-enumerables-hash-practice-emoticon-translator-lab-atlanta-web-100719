@@ -1,4 +1,5 @@
 require "yaml"
+sorry_message = "Sorry, that emoticon was not found"
 
 def load_library (file_path)
   emoticons = YAML.load_file(file_path)
@@ -15,7 +16,7 @@ end
 
 def get_japanese_emoticon (file_path, emoticon)
   library = load_library(file_path)
-  library[:get_emoticon].fetch(emoticon, nil)
+  library[:get_emoticon].fetch(emoticon, sorry_message)
 end
 
 def get_english_meaning
