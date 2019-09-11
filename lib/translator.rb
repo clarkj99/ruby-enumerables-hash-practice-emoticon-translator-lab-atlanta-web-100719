@@ -1,14 +1,18 @@
 require "yaml"
 
 def load_library (file_path)
- emoticons = YAML.load_file(file_path)
- e_hash = {:get_meaning => {},:get_emoticon => {} }
+  emoticons = YAML.load_file(file_path)
+  e_hash = {:get_meaning => {},:get_emoticon => {} }
  
- e_hash[:get_meaning] = emoticons.reduce({}) do |meanings, (key, value)|  
-   meanings[value[1]] = key  
-   meanings
+  e_hash[:get_meaning] = emoticons.reduce({}) do |meanings, (key, value)|  
+    meanings[value[1]] = key  
+    meanings
  end
- e_hash
+ 
+  emoticons.reduce(e_hash) do |meanings, (key,value)|
+    
+  end
+  e_hash
 end
 
 def get_japanese_emoticon
