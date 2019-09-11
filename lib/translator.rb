@@ -11,7 +11,7 @@ def load_library (file_path)
  
   emoticons.reduce(e_hash) do |item, (key,value)|
     item[:get_meaning][value[1]] = key
-    item[:get_emoticon][value[0]] = key
+    item[:get_emoticon][value[0]] = value[1]
     item
   end
   
